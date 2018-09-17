@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-title>Editar Tarefa</mat-card-title>
+  <mat-card-content>
+
+    <form [formGroup]="form">
+
+      <div class="container" style="padding: 16px">
+
+        <mat-form-field>
+          <input matInput placeholder="Titulo" formControlName="titulo">
+        </mat-form-field>
+
+        <mat-radio-group formControlName="status">
+          <mat-radio-button checked="true" value="TODO" style="margin-right: 10px">TODO</mat-radio-button>
+          <mat-radio-button value="WORKING" style="margin-right: 10px">WORKING</mat-radio-button>
+          <mat-radio-button value="DONE">DONE</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field>
+          <textarea matInput placeholder="Descrição" formControlName="descricao"></textarea>
+        </mat-form-field>
+
+      </div>
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button routerLink="['']">Voltar</button>
+    <button mat-raised-button color="accent" [disabled]="form.invalid" (click)="salvar()">Salvar</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
